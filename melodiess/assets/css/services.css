@@ -1,0 +1,94 @@
+/* Reset some default styles */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the services section */
+.services {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color:whitesmoke;
+    padding: 40px;
+    display: block;
+}
+/* Style individual service items */
+.service {
+    text-align: center;
+    background-color:gray;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    cursor: pointer;
+    height: 10%;
+    padding: 5px;
+    margin: 5px;
+    max-width: 25em;
+
+}
+.serv{
+    margin-left: 40px;
+    justify-content: center;
+    align-items: center;
+    display: block;
+}
+.min-service{
+    display: flex;
+    flex-wrap: wrap;
+}
+.service:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Style service images */
+.service img {
+    width: 80px;
+    max-width: 100%;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+/* Style service titles */
+.service h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* Style service descriptions */
+.service p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.center-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+  }
+  
+  .back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: black;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+  }
+  
+/* Styling for the Our Services title */
+.service-title {
+    text-align: center; 
+    font-size: 24px; 
+    background-color: black;   
+    color:whitesmoke;      
+    margin-top: 20px;   
+    padding: 12px;
+    margin: 10px;
+    height: 5%;
+
+}

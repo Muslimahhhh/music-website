@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Music </title>
+<!-- Load FontAwesome icons -->
+<link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+<!-- Load the custom CSS style file -->
+<link rel="stylesheet" type="text/css" href="assets/css/music.css">
+</head>
+<body>
+<!-- Add the search bar -->
+<input type="text" id="searchInput" placeholder="Search for a song...">
+<button onclick="searchSongs()">Search</button>
+
+<div class="player">
+
+	<!-- Define the section for displaying details -->
+	<div class="details">
+	<div class="now-playing">PLAYING x OF y</div>
+	<div class="track-art"></div>
+	<div class="track-name">Track Name</div>
+	<div class="track-artist">Track Artist</div>
+	</div>
+
+	<!-- Define the section for displaying track buttons -->
+	<div class="buttons">
+	<div class="prev-track" onclick="prevTrack()">
+		<i class="fa fa-step-backward fa-2x"></i>
+	</div>
+	<div class="playpause-track" onclick="playpauseTrack()">
+		<i class="fa fa-play-circle fa-5x"></i>
+	</div>
+	<div class="next-track" onclick="nextTrack()">
+		<i class="fa fa-step-forward fa-2x"></i>
+	</div>
+	</div>
+
+	<!-- Define the section for displaying the seek slider-->
+	<div class="slider_container">
+	<div class="current-time">00:00</div>
+	<input type="range" min="1" max="100"
+		value="0" class="seek_slider" onchange="seekTo()">
+	<div class="total-duration">00:00</div>
+	</div>
+
+	<!-- Define the section for displaying the volume slider-->
+	<div class="slider_container">
+	<i class="fa fa-volume-down"></i>
+	<input type="range" min="1" max="100"
+		value="99" class="volume_slider" onchange="setVolume()">
+	<i class="fa fa-volume-up"></i>
+	</div>
+</div>
+<!-- Add your list of songs here -->
+<ul id="song-list">
+    <li data-title="Lonely-At-The-Top" data-artist="Asake" data-src="songs/Asake-Lonely-At-The-Top.mp3">
+        <span class="song-info">Lonely-At-The-Top</span>
+        <button class="add-to-favorites">Add to Favorites</button>
+    </li>
+    <li data-title="Enthusiast" data-artist="Tours" data-src="https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Tours/Enthusiast/Tours_-_01_-_Enthusiast.mp3">
+        <span class="song-info">Enthusiast</span>
+        <button class="add-to-favorites">Add to Favorites</button>
+    </li>
+	<li data-title="Night Owl" data-artist="Broke For Free" data-src="https://files.freemusicarchive.org/storage-freemusicarchive-org/music/WFMU/Broke_For_Free/Directionless_EP/Broke_For_Free_-_01_-_Night_Owl.mp3">
+        <span class="song-info">Night Owl</span>
+        <button class="add-to-favorites">Add to Favorites</button>
+    </li>
+	<li data-title="Anabella" data-artist="Khalid" data-src="songs/Khaid-Anabella-(TrendyBeatz.com).mp3">
+        <span class="song-info">Anabella</span>
+        <button class="add-to-favorites">Add to Favorites</button>
+    </li>
+	<li data-title="Kristy" data-artist="Ruger" data-src="songs/Khaid-Anabella-(TrendyBeatz.com).mp3">
+        <span class="song-info">Kristy</span>
+        <button class="add-to-favorites">Add to Favorites</button>
+    </li>
+	<li data-title="Unleash" data-artist="Kiss-Daniel$Poco" data-src="songs/pocokiss.mp3">
+        <span class="song-info">Unleash</span>
+        <button class="add-to-favorites">Add to Favorites</button>
+
+    </li>
+	<li data-title="Sharpally" data-artist="Young John" data-src="songs/youngjohn.mp3">
+        <span class="song-info">Sharpally</span>
+        <button class="add-to-favorites">Add to Favorites</button>
+		
+    </li>
+	<li data-title="Jara" data-artist="Khaid" data-src="songs/khaidjara.mp3">
+        <span class="song-info">Jara</span>
+        <button class="add-to-favorites">Add to Favorites</button>
+		
+    </li>
+	<li data-title="pray" data-artist="Buju" data-src="songs/buju.mp3">
+        <span class="song-info">Pray</span>
+        <button class="add-to-favorites">Add to Favorites</button>
+		
+    </li>
+	<li data-title="Amdallah" data-artist="Seyi-Vibez" data-src="songs/seyi.mp3">
+        <span class="song-info">Amdallah</span>
+        <button class="add-to-favorites">Add to Favorites</button>
+		
+    </li>
+	<li data-title="Unleash" data-artist="Kiss-Daniel$Poco" data-src="songs/pocokiss.mp3">
+        <span class="song-info">Ngozi</span>
+        <button class="add-to-favorites">Add to Favorites</button>
+		
+    </li>
+	<li data-title="Unleash" data-artist="Kiss-Daniel$Poco" data-src="songs/pocokiss.mp3">
+        <span class="song-info">No-Competition</span>
+        <button class="add-to-favorites">Add to Favorites</button>
+		
+    </li>
+	<li data-title="Unleash" data-artist="Kiss-Daniel$Poco" data-src="songs/pocokiss.mp3">
+        <span class="song-info">Bad-To-Be</span>
+        <button class="add-to-favorites">Add to Favorites</button>
+		
+    </li>
+	<li data-title="Unleash" data-artist="Kiss-Daniel$Poco" data-src="songs/pocokiss.mp3">
+        <span class="song-info">Chance</span>
+        <button class="add-to-favorites">Add to Favorites</button>
+		
+    </li>
+	<li data-title="Unleash" data-artist="Kiss-Daniel$Poco" data-src="songs/pocokiss.mp3">
+        <span class="song-info">Ask-About-Me</span>
+        <button class="add-to-favorites">Add to Favorites</button>
+		
+    </li>
+	<li data-title="Unleash" data-artist="Kiss-Daniel$Poco" data-src="songs/pocokiss.mp3">
+        <span class="song-info">Up $Down</span>
+        <button class="add-to-favorites">Add to Favorites</button>
+		
+    </li>
+	<li data-title="Unleash" data-artist="Kiss-Daniel$Poco" data-src="songs/pocokiss.mp3">
+        <span class="song-info">Puff $Pass</span>
+        <button class="add-to-favorites">Add to Favorites</button>
+		
+    </li>
+	<li data-title="Unleash" data-artist="Kiss-Daniel$Poco" data-src="songs/pocokiss.mp3">
+        <span class="song-info">Red $GReen</span>
+        <button class="add-to-favorites">Add to Favorites</button>
+		
+    </li>
+	<li data-title="Unleash" data-artist="Kiss-Daniel$Poco" data-src="songs/pocokiss.mp3">
+        <span class="song-info">Dejavu</span>
+        <button class="add-to-favorites">Add to Favorites</button>
+		
+    </li>
+	
+</ul>
+
+<!-- Load the main script for the player -->
+<script src="assets/js/music.js"></script>
+
+</body>
+</html>
